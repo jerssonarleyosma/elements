@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/audio,images,video,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=audio,images,video,visualstudiocode
 
+## Carpetas ##
+assets/
+
 ### Audio ###
 *.aif
 *.iff
