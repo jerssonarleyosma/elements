@@ -11,13 +11,3 @@ body {
             "body" 1fr / 1fr;
     background-color: vars.$primary-color;
 }
-
-
-@media screen and (min-width: 500px) and (max-width: 860px) {
-    body {
-        grid-template: 
-            "head" 350px
-            "body" 1fr / 1fr;
-        background-color: vars.$primary-color;
-    }
-}

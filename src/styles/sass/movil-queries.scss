@@ -1,0 +1,24 @@
+@use './components/variables' as vars;
+
+body {
+    grid-template: 
+        "head" 350px
+        "body" 1fr / 1fr;
+    background-color: vars.$primary-color;
+    .header {
+        flex-direction: column;
+        border-radius: 0 0 10px 10px;
+        &__logo {
+            width: 100%;
+            height: 100px;
+        }
+        &__nav {
+            ul {
+                flex-direction: column;
+                li {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
