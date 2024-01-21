@@ -1,2 +1,23 @@
-@use './components/reset' as reset;
-@use './components/variables' as variables;
+@use './components/reset';
+@use './components/variables' as vars;
+@use './components/header';
+
+
+
+body {
+    display: grid;
+    grid-template: 
+            "head" 90px
+            "body" 1fr / 1fr;
+    background-color: vars.$primary-color;
+}
+
+
+@media screen and (min-width: 500px) and (max-width: 860px) {
+    body {
+        grid-template: 
+            "head" 350px
+            "body" 1fr / 1fr;
+        background-color: vars.$primary-color;
+    }
+}
