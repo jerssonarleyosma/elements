@@ -1,0 +1,309 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.header {
+  grid-area: head;
+  background-color: #F5FDF8;
+  padding: 0.4rem;
+  margin: 0 20px;
+  display: flex;
+  border-radius: 0 0 25px 25px;
+}
+.header__logo {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.header__logo img {
+  object-fit: contain;
+  height: 100%;
+}
+.header__nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__nav ul li {
+  list-style: none;
+  height: 100%;
+  width: 150px;
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__nav ul li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+  font-size: 2.3rem;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all cubic-bezier(0.87, 0.64, 0.41, 0.92) 0.3s;
+}
+.header__nav ul li a:hover {
+  background-color: #08141E;
+  color: #F5FDF8;
+  border-radius: 8px;
+}
+
+body {
+  display: grid;
+  grid-template: "head" 90px "body" 1fr/1fr;
+  background-color: #08141E;
+}
+body .main {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body .main__container {
+  background-color: rgb(227, 255, 211);
+  width: 80%;
+  height: 300px;
+  margin: 32px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid rgb(40, 255, 122);
+  border-radius: 25px;
+}
+body .main__container-nav ul li {
+  list-style: none;
+}
+body .main__container-nav ul li a {
+  text-decoration: none;
+}
+
+.main__container-nav1 {
+  width: 90%;
+  height: 100px;
+  background-color: chartreuse;
+  border-radius: 15px;
+  box-shadow: 3px 2px 4px rgb(44, 44, 44);
+}
+.main__container-nav1 ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.main__container-nav1 ul li {
+  background-color: brown;
+  width: 120px;
+  height: 80px;
+}
+.main__container-nav1 ul li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: chartreuse;
+  color: black;
+  font-weight: 200;
+  font-size: 2rem;
+  border-radius: 0;
+  transition: all ease-in-out 0.2s;
+}
+.main__container-nav1 ul li a:hover {
+  color: brown;
+  font-weight: 600;
+  font-size: 2.4rem;
+  background-color: rgb(21, 255, 0);
+  border-radius: 25px;
+}
+
+.main__container-nav2 {
+  width: 75%;
+  height: 80px;
+  position: relative;
+  background-color: rgb(47, 0, 255);
+  border-radius: 15px;
+  box-shadow: 3px 2px 4px rgb(44, 44, 44);
+}
+.main__container-nav2 .cliped {
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 153, 2);
+  clip-path: url(#figuracliped);
+  transition: all 0.4s ease-in-out;
+  animation: clipedd 20s linear 0.01s infinite normal none running;
+}
+@keyframes clipedd {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main__container-nav2 ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.main__container-nav2 ul .clicked2 {
+  color: rgb(47, 0, 255);
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+.main__container-nav2 ul li {
+  z-index: 2;
+  width: 120px;
+  height: 80px;
+}
+.main__container-nav2 ul li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 200;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+.main__container-nav2 ul li a:hover {
+  font-weight: 600;
+  font-size: 2.4rem;
+}
+
+.cliped-rigthf {
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 153, 2);
+  clip-path: url(#figuracliped);
+  transition: all 1s ease-in-out;
+  animation: clipeddrigfast 1s linear 0.00001s infinite normal forwards running;
+}
+
+@keyframes clipeddrigfast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.cliped-rigths {
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 153, 2);
+  clip-path: url(#figuracliped);
+  transition: all 0.4s ease-in-out;
+  animation: clipeddrigslow 20s linear 0.01s infinite normal none running;
+}
+
+@keyframes clipeddrigslow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.cliped-leftf {
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 153, 2);
+  clip-path: url(#figuracliped);
+  transition: all 1s ease-in-out;
+  animation: clipeddleffast 1s linear 0.00001s infinite normal forwards running;
+}
+
+@keyframes clipeddleffast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.cliped-lefts {
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(235, 153, 2);
+  clip-path: url(#figuracliped);
+  transition: all 0.4s ease-in-out;
+  animation: clipeddlefslow 20s linear 0.01s infinite normal none running;
+}
+
+@keyframes clipeddlefslow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/*# sourceMappingURL=navbars.css.map */

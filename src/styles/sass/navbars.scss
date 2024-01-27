@@ -1,0 +1,248 @@
+@use './components/reset';
+@use './components/variables' as vars;
+@use './components/header';
+
+
+
+body {
+    display: grid;
+    grid-template: 
+            "head" 90px
+            "body" 1fr / 1fr;
+    background-color: vars.$primary-color;
+    .main {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__container {
+            background-color: rgb(227, 255, 211);
+            width: 80%;
+            height: 300px;
+            margin: 32px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 4px solid rgb(40, 255, 122);
+            border-radius: 25px;
+            &-nav {
+                ul {
+                    li {
+                        list-style: none;
+                        a {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// primera nav
+
+.main__container-nav1 {
+    width: 90%;
+    height: 100px;
+    background-color: chartreuse;
+    border-radius: 15px;
+    box-shadow: 3px 2px 4px rgb(44, 44, 44);
+    ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li {
+            background-color: brown;
+            width: 120px;
+            height: 80px;       
+            a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: chartreuse;
+                color: black;
+                font-weight: 200;
+                font-size: 2rem;
+                border-radius: 0;
+                transition: all ease-in-out 0.2s;
+                &:hover {
+                    color: brown;
+                    font-weight: 600;
+                    font-size: 2.4rem;
+                    background-color: rgb(21, 255, 0);
+                    border-radius: 25px;
+                }
+            }
+        }
+    }
+}
+
+
+///////////// segundo nav
+
+
+.main__container-nav2 {
+    width: 75%;
+    height: 80px;
+    position: relative;
+    background-color: rgb(47, 0, 255);
+    border-radius: 15px;
+    box-shadow: 3px 2px 4px rgb(44, 44, 44);
+    .cliped {
+        z-index: 1;
+        width: 150px;
+        height: 150px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(235, 153, 2);
+        clip-path: url(#figuracliped);
+        transition: all 0.4s ease-in-out;
+        animation: clipedd 20s linear 0.01s infinite normal none running;
+    }
+    @keyframes clipedd {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .clicked2 {
+            color: rgb(47, 0, 255);
+            font-weight: 600;
+            font-size: 2.4rem;
+        }
+        li {
+            z-index: 2;
+            width: 120px;
+            height: 80px;  
+            a {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-weight: 200;
+                font-size: 2rem;
+                cursor: pointer;
+                transition: all ease-in-out 0.2s;
+                &:hover {
+                    font-weight: 600;
+                    font-size: 2.4rem;
+                }
+            }
+        }
+    }
+}
+
+// animaciones al dar click
+
+.cliped-rigthf {
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 153, 2);
+    clip-path: url(#figuracliped);
+    transition: all 1s ease-in-out;
+    animation: clipeddrigfast 1s linear 0.00001s infinite normal forwards running;
+}
+@keyframes clipeddrigfast {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cliped-rigths {
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 153, 2);
+    clip-path: url(#figuracliped);
+    transition: all 0.4s ease-in-out;
+    animation: clipeddrigslow 20s linear 0.01s infinite normal none running;
+}
+@keyframes clipeddrigslow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.cliped-leftf {
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 153, 2);
+    clip-path: url(#figuracliped);
+    transition: all 1s ease-in-out;
+    animation: clipeddleffast 1s linear 0.00001s infinite normal forwards running;
+}
+@keyframes clipeddleffast {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.cliped-lefts {
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 153, 2);
+    clip-path: url(#figuracliped);
+    transition: all 0.4s ease-in-out;
+    animation: clipeddlefslow 20s linear 0.01s infinite normal none running;
+}
+@keyframes clipeddlefslow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+
