@@ -20,9 +20,13 @@ p {
   text-wrap: pretty;
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   grid-area: head;
-  background-color: #F5FDF8;
+  background-color: #fbfcf6;
   padding: 0.4rem;
   margin: 0 20px;
   display: flex;
@@ -75,7 +79,7 @@ p {
 }
 .header__nav ul li a:hover {
   background-color: #08141E;
-  color: #F5FDF8;
+  color: #fbfcf6;
   border-radius: 8px;
 }
 
@@ -91,15 +95,16 @@ body .main {
   align-items: center;
 }
 body .main__container {
-  background-color: rgb(227, 255, 211);
   width: 80%;
   height: 300px;
   margin: 32px 0;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 4px solid rgb(40, 255, 122);
-  border-radius: 25px;
+  background-color: #fbfcf6;
+  border: 8px groove rgb(16, 255, 36);
+  border-radius: 25px 8px 25px 25px;
 }
 body .main__container-nav ul li {
   list-style: none;
@@ -107,13 +112,115 @@ body .main__container-nav ul li {
 body .main__container-nav ul li a {
   text-decoration: none;
 }
+body .main__container-nav-botton {
+  width: 200px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 8px 8px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+body .main__container-nav-botton button {
+  width: 40px;
+  height: 25px;
+  background-color: #08141E;
+  color: #fbfcf6;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px black;
+  transition: all 0.3s ease;
+}
+body .main__container-nav-botton button:hover {
+  cursor: pointer;
+  background-color: #132f46;
+  transform: scale(1.09);
+  box-shadow: 3px 4px 4px black;
+}
+
+.pop {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.4s ease-in-out;
+  animation: showmodal 0.4s linear 0.00000001s 1 normal forwards running;
+}
+@keyframes showmodal {
+  from {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.pop pre {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background-color: #fbfcf6;
+  border-radius: 10px;
+}
+.pop pre code {
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  overflow: auto;
+}
+.pop pre code::-webkit-scrollbar {
+  width: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #fbfcf6;
+}
+.pop pre code::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #08141E;
+}
+.pop div {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pop div:hover {
+  cursor: pointer;
+}
+.pop div:hover i {
+  color: #ee6b6b;
+  transform: scale(1.4);
+}
+.pop div i {
+  font-size: 25px;
+  color: rgb(16, 255, 36);
+  transition: all ease 0.3s;
+}
+
+.no-scroll {
+  overflow: hidden; /* Previene el desplazamiento */
+}
 
 .main__container-nav1 {
   width: 90%;
   height: 100px;
-  background-color: chartreuse;
+  background: linear-gradient(180deg, rgb(33, 121, 33), rgb(44, 158, 44));
   border-radius: 15px;
-  box-shadow: 3px 2px 4px rgb(44, 44, 44);
+  box-shadow: 2px 3px 4px rgb(0, 0, 0);
 }
 .main__container-nav1 ul {
   width: 100%;
@@ -123,9 +230,10 @@ body .main__container-nav ul li a {
   align-items: center;
 }
 .main__container-nav1 ul li {
-  background-color: brown;
+  background-color: rgb(245, 47, 47);
   width: 120px;
   height: 80px;
+  border-radius: 10px;
 }
 .main__container-nav1 ul li a {
   width: 100%;
@@ -133,18 +241,17 @@ body .main__container-nav ul li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: chartreuse;
-  color: black;
+  background: linear-gradient(180deg, rgb(33, 121, 33), rgb(44, 158, 44));
+  color: white;
   font-weight: 200;
   font-size: 2rem;
-  border-radius: 0;
+  border-radius: 10px;
   transition: all ease-in-out 0.2s;
 }
 .main__container-nav1 ul li a:hover {
-  color: brown;
+  cursor: pointer;
   font-weight: 600;
   font-size: 2.4rem;
-  background-color: rgb(21, 255, 0);
   border-radius: 25px;
 }
 
@@ -152,7 +259,7 @@ body .main__container-nav ul li a {
   width: 75%;
   height: 80px;
   position: relative;
-  background-color: rgb(47, 0, 255);
+  background: linear-gradient(180deg, rgb(31, 1, 165), rgb(83, 45, 255));
   border-radius: 15px;
   box-shadow: 3px 2px 4px rgb(44, 44, 44);
 }
@@ -168,8 +275,8 @@ body .main__container-nav ul li a {
   align-items: center;
   background-color: rgb(235, 153, 2);
   clip-path: url(#figuracliped);
-  transition: all 0.4s ease-in-out;
-  animation: clipedd 20s linear 0.01s infinite normal none running;
+  transition: all 0.7s ease-in-out;
+  animation: clipedd 20s linear 0.02s infinite normal none running;
 }
 @keyframes clipedd {
   from {
@@ -223,8 +330,8 @@ body .main__container-nav ul li a {
   align-items: center;
   background-color: rgb(235, 153, 2);
   clip-path: url(#figuracliped);
-  transition: all 1s ease-in-out;
-  animation: clipeddrigfast 1s linear 0.00001s infinite normal forwards running;
+  transition: all 0.7s ease-in-out;
+  animation: clipeddrigfast 0.7s linear 0.00001s infinite normal forwards running;
 }
 
 @keyframes clipeddrigfast {
@@ -247,7 +354,7 @@ body .main__container-nav ul li a {
   align-items: center;
   background-color: rgb(235, 153, 2);
   clip-path: url(#figuracliped);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.7s ease-in-out;
   animation: clipeddrigslow 20s linear 0.01s infinite normal none running;
 }
 
@@ -269,8 +376,8 @@ body .main__container-nav ul li a {
   align-items: center;
   background-color: rgb(235, 153, 2);
   clip-path: url(#figuracliped);
-  transition: all 1s ease-in-out;
-  animation: clipeddleffast 1s linear 0.00001s infinite normal forwards running;
+  transition: all 0.7s ease-in-out;
+  animation: clipeddleffast 0.7s linear 0.00001s infinite normal forwards running;
 }
 
 @keyframes clipeddleffast {
@@ -293,7 +400,7 @@ body .main__container-nav ul li a {
   align-items: center;
   background-color: rgb(235, 153, 2);
   clip-path: url(#figuracliped);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.7s ease-in-out;
   animation: clipeddlefslow 20s linear 0.01s infinite normal none running;
 }
 
