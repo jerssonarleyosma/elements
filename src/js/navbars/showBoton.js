@@ -1,15 +1,3 @@
-//capturar contenedores
-let nabvarOneBoton = document.getElementsByClassName('main__container-nav1'); //borrAR
-let nabvartwoBoton = document.getElementsByClassName('main__container-nav2'); //borrAR
-let mainn = document.getElementsByClassName('main')
-
-let arraySections = Array.from(mainn[0].children);
-
-//capturar modal
-let modal = document.getElementsByClassName('pop');
-
-// capturar boy
-let elBody = document.getElementById('body');
 
 // funcion para mostrar botones
 
@@ -31,16 +19,18 @@ const showButtoms = (container, arr, divPop) => {
     container.appendChild(elementContainer);
 
     
-    // volver array a los botones
+    // volver array a los botones 
     let arrayButtoms = Array.from(elementContainer.children);
- 
+    
+    // agregar evento click a esos botones
     arrayButtoms.forEach((element, index, arra) => {
         element.addEventListener('click', ()=> {
-            
+
             divPop[0].innerHTML = ``;
 
+            //cada boton tiene un nombre se pasa a minuscula y se captura ejemplo html css js etc.
             let nombreArrayy = String(element.textContent.toLowerCase());
-            
+
             let preEtiqueta = document.createElement('pre');
             let codeEtiqueta = document.createElement('code');
             let crossMarkContainer = document.createElement('div')
@@ -69,7 +59,17 @@ const showButtoms = (container, arr, divPop) => {
                     divPop[0].classList.add('hidden')
                     elBody.classList.remove('no-scroll')
                 }
-              });
+            });
+
+            // este evento es cuando se hace click en el modal pero no en el codigo  para cerrar (performance)
+            divPop[0].addEventListener('click', function(event) {
+                if(event.target.tagName == "DIV") {
+                    divPop[0].classList.add('hidden')
+                    elBody.classList.remove('no-scroll')
+                } 
+            });
+            
+            
               
         })
     })
