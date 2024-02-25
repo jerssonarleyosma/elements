@@ -20,9 +20,13 @@ p {
   text-wrap: pretty;
 }
 
+.hidden {
+  display: none;
+}
+
 .header {
   grid-area: head;
-  background-color: #F5FDF8;
+  background-color: #fbfcf6;
   padding: 0.4rem;
   margin: 0 20px;
   display: flex;
@@ -75,7 +79,7 @@ p {
 }
 .header__nav ul li a:hover {
   background-color: #08141E;
-  color: #F5FDF8;
+  color: #fbfcf6;
   border-radius: 8px;
 }
 
