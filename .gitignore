@@ -2,6 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=audio,images,video,visualstudiocode
 
 ## Carpetas ##
+node_modules/
 # assets/
 
 # ### Audio ###
@@ -119,5 +120,10 @@
 # Ignore all local history of files
 .history
 .ionide
+
+
+#ignore all sass map
+
+*.css.map
 
 # End of https://www.toptal.com/developers/gitignore/api/audio,images,video,visualstudiocode
