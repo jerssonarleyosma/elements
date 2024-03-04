@@ -86,6 +86,11 @@ p {
   border-radius: 8px;
 }
 
+@media (max-height: 900px) {
+  .header {
+    position: static;
+  }
+}
 body {
   display: grid;
   grid-template: "head" 90px "body" 1fr/1fr;

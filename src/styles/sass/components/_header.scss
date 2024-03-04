@@ -61,3 +61,10 @@
         }
     }
 }
+
+
+@media (max-height: 900px) {
+    .header {
+        position: static; 
+    }
+}
