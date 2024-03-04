@@ -10,4 +10,49 @@ body {
             "head" 90px
             "body" 1fr / 1fr;
     background-color: vars.$primary-color;
+    background: vars.$primary-color;
+    background: linear-gradient(335deg, vars.$primary-color 39%, vars.$fourth-color 60%);
+    &::-webkit-scrollbar{
+        width: 10px;
+        box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: vars.$secondary-color;
+    }
+    &::-webkit-scrollbar-thumb{
+        border-radius: 10px;
+        box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: lighten(vars.$primary-color, 10%);
+    }
+}
+
+.main {
+    grid-area: body;
+    width: 70%;
+    padding: 32px 0;
+    justify-self: center;
+    color: vars.$w1-font;
+    font-family: "Josefin Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 40px;
+    &__tittle {
+        font-size: vars.$t2-size;
+        font-style: italic;
+    }
+    hr {
+        width: 50%;
+    }
+    &__paragraph {
+        font-size: vars.$t1-size;
+        strong {
+            font-style: italic;
+        }
+        span {
+            display: inline;
+            font-style: italic;
+            font-weight: 800;
+        }
+    }
 }

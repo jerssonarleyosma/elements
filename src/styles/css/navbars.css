@@ -26,6 +26,9 @@ p {
 
 .header {
   grid-area: head;
+  z-index: 999;
+  position: sticky;
+  top: 0;
   background-color: #fbfcf6;
   padding: 0.4rem;
   margin: 0 20px;
@@ -86,9 +89,22 @@ p {
 body {
   display: grid;
   grid-template: "head" 90px "body" 1fr/1fr;
-  background-color: #08141E;
+  background: #08141E;
+  background: linear-gradient(335deg, #08141E 39%, #0f2a3f 60%);
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #fbfcf6;
+}
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #132f46;
 }
 body .main {
+  grid-area: body;
   padding: 16px;
   display: flex;
   flex-direction: column;
@@ -186,7 +202,7 @@ body .main__container-nav-botton button:hover {
 .pop pre code::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  background-color: #08141E;
+  background-color: #1d4a6f;
 }
 .pop div {
   position: absolute;
